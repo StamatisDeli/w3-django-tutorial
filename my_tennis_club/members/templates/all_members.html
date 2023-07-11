@@ -1,5 +1,4 @@
 {% extends "master.html" %}
-
 <!-- prettier-ignore -->
 {% block title %}
   My Tennis Club - List of all members
@@ -8,12 +7,11 @@
 <!-- prettier-ignore -->
 {% block content %}
 <div class="mycard">
-  <h1 class="test">Members</h1>
+  <h1>Members</h1>
   <ul>
     {% for x in mymembers %}
-    <li onclick="window.location = 'details/{{ x.id }}'">
-      {{ x.firstname }} {{ x.lastname }}
-    </li>
+    <!-- prettier-ignore -->
+    <li onclick="window.location = 'details/{{ x.slug }}'">{{ x.firstname }} {{ x.lastname }}</li>
     {% endfor %}
   </ul>
 </div>
