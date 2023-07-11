@@ -1,0 +1,64 @@
+{% extends "master.html" %}
+
+<!-- prettier-ignore -->
+{% block content %}
+
+{% for x in fruits %}
+<p>{{ x }}</p>
+{% endfor %}
+
+<p>In views.py you can see what the fruits variable looks like.</p>
+
+<ul>
+  {% for x in mymembers %}
+  <li>{{ x.firstname }}</li>
+  {% endfor %}
+</ul>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  {% for x in mymembers %}
+  <tr>
+    <td>{{ x.id }}</td>
+    <td>{{ x.firstname }}</td>
+    <td>{{ x.lastname }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<p>The queryset object:</p>
+{{ mymembers }}
+
+<p>record queryset object:</p>
+{{ myrecord }}
+
+<p>filter queryset object:</p>
+{{ myfilter }}
+
+<p>2 filter queryset object:</p>
+{{ my2filter }}
+
+<p>myQExpfilter filter queryset object:</p>
+{{ myQExpfilter }}
+
+<p>myorderedbyfirstnamedata queryset object:</p>
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  {% for x in myorderedbyfirstnamedata %}
+  <tr>
+    <td>{{ x.id }}</td>
+    <td>{{ x.firstname }}</td>
+    <td>{{ x.lastname }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}
